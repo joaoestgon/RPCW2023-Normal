@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  head
+    title Institution Details
+  body
+    h1 Institution Details
+    h2 Institution Name: #{institution.NomeInstituicao}
+    h2 NIPC: #{institution.NIPCInstituicao}
+    table
+      thead
+        tr
+          th Contract ID
+          th Start Date
+          th End Date
+          th Research Areas
+      tbody
+        each contract in contracts
+          tr
+            td #{contract._id}
+            td #{contract.DataInicioContrato}
+            td #{contract.DataFimContrato}
+            td #{contract.AreasInvestigacao}

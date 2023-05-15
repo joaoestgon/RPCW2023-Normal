@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    h1 Institution Contracts
+    h2 Institution: #{institutionName}
+    table
+        thead
+        tr
+            th Contract ID
+            th Start Date
+            th End Date
+            th Research Areas
+        tbody
+        each contract in contracts
+            tr
+            td #{contract._id}
+            td #{contract.DataInicioContrato}
+            td #{contract.DataFimContrato}
+            td #{contract.AreasInvestigacao}

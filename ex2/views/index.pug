@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1 Contracts
+  table
+    thead
+      tr
+        th ID
+        th Start Date
+        th End Date
+        th Institution Name
+        th Research Areas
+    tbody
+      each contract in contracts
+        tr
+          td
+            a(href='/contracts/' + contract.id) #{contract._id}
+          td #{contract.DataInicioContrato}
+          td #{contract.DataFimContrato}
+          td
+            a(href='/institutions?=' + contract.InstituicaoEnsino) #{contract.NomeInstituicao}
+          td #{contract.AreasInvestigacao}
+

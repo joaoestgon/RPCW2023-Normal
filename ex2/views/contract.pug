@@ -1,0 +1,29 @@
+  extends layout
+
+block content
+  head
+    title Contract Details
+  body
+    h1 Contract Details
+    table
+      thead
+        tr
+          th Field
+          th Value
+      tbody
+        tr
+          td Contract ID
+          td #{contract._id}
+        tr
+          td Start Date
+          td #{contract.DataInicioContrato}
+        tr
+          td End Date
+          td #{contract.DataFimContrato}
+        tr
+          td Institution
+          td #{contract.NomeInstituicao}
+        tr
+          td Research Areas
+          td #{contract.AreasInvestigacao}
+    a(href='/') Return to Homepage

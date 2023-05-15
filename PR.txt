@@ -1,0 +1,275 @@
+Exercício 1:
+
+    1. Tratamento do dataset fornecido:
+        -> Removi alguns caracteres que não estavam em ut-8
+        -> Fiz um script python para adicionar um _id a cada objeto
+
+    2. Criação da base de dados e das coleções
+        -> Comando: mongoimport -d MscienceJobs -c contracts --jsonArray 
+
+    3. Criação do servidor em nodejs 
+        -> Comando: "npx express-generator --view=pug ex1"
+        -> Fui para a pasta e instalei as dependências com "npm i"
+        -> Instalei os módulos necessários "npm i mongoose nodemon --save"
+        -> Acrescentei um modo de "development" no package.json
+        -> O servidor pode ser lançado com "npm start" e fica à escuta na porta 15015
+
+--- Repostas Escritas ---
+
+1.2.1 - db.contracts.count({})
+
+Numero de Contratos: 17943
+
+1.2.2 - db.contracts.count({ InstituicaoEnsino: "Universidade do Minho" })
+
+Numero de Contratos Realizados pela Universidade do Minho: 1399
+
+1.2.3 - db.contracts.distinct("AreaCNAEF").sort()
+
+[
+  '',
+  'Agricultura sem definição precisa',
+  'Agricultura, silvicultura, pescas e ciências veterinárias sem definição precisa',
+  'Ambiente sem definição precisa',
+  'Ambientes naturais e vida selvagem',
+  'Aprendizagem de línguas',
+  'Arquitetura e construção sem definição precisa',
+  'Arquitetura e urbanismo',
+  'Artes e humanidades sem definição precisa',
+  'Artes sem definição precisa',
+  'Artesanato',
+  'Belas-artes',
+  'Biblioteconomia, arquivística e ciências da informação',
+  'Biologia',
+  'Bioquímica',
+  'Ciências biológicas e ciências afins sem definição precisa',
+  'Ciências da educação',
+  'Ciências da terra',
+  'Ciências dentárias',
+  'Ciências do ambiente',
+  'Ciências empresariais e administração sem definição precisa',
+  'Ciências empresariais, administração e direito sem definição precisa',
+  'Ciências farmacêuticas',
+  'Ciências físicas sem definição precisa',
+  'Ciências naturais, matemática e estatística sem definição precisa',
+  'Ciências políticas e cidadania',
+  'Ciências sociais e comportamentais sem definição precisa',
+  'Ciências sociais, jornalismo e informação sem definição precisa',
+  'Ciências veterinárias',
+  'Competências laborais',
+  'Construção civil e engenharia civil',
+  'Contabilidade e fiscalidade',
+  'Desenvolvimento e análise de software e aplicações informáticas',
+  'Design de moda, de interiores e industrial',
+  'Design e administração de bases de dados e de redes informáticas',
+  'Desporto',
+  'Direito',
+  'Economia',
+  'Eletricidade e energia',
+  'Eletrónica e automação',
+  'Enfermagem geral e enfermagem obstétrica',
+  'Engenharia e tecnologias afins sem definição precisa',
+  'Engenharia química e de processos',
+  'Engenharia, indústrias transformadoras e construção sem definição precisa',
+  'Estatística',
+  'Filosofia e ética',
+  'Finanças, banca e seguros',
+  'Formação de educadores de infância',
+  'Formação de professores de áreas disciplinares específicas',
+  'Formação de professores de áreas disciplinares não específicas',
+  'Física',
+  'Gestão e administração',
+  'História e arqueologia',
+  'Horticultura',
+  'Humanidades (exceto línguas) sem definição precisa',
+  'Indústrias alimentares',
+  'Indústrias extrativas',
+  'Informática na ótica do utilizador',
+  'Jornalismo e informação sem definição precisa',
+  'Jornalismo e reportagem',
+  'Literatura e linguística',
+  'Línguas sem definição precisa',
+  'Marketing e publicidade',
+  'Matemática',
+  'Matemática e estatística sem definição precisa',
+  'Materiais (vidro, papel, plástico e madeira)',
+  'Medicina',
+  'Medicina tradicional e complementar e terapia',
+  'Metalurgia e metalomecânica',
+  'Música e artes do espetáculo',
+  'Pescas',
+  'Produção agrícola e animal',
+  'Programas de Agricultura não classificados noutras áreas',
+  'Programas de Artes  não classificados noutras áreas',
+  'Programas de Artes e humanidades não classificados noutras áreas',
+  'Programas de Ciências biológicas e ciências afins não classificados noutras áreas',
+  'Programas de Ciências empresariais e administração não classificados noutras áreas',
+  'Programas de Ciências empresariais, administração e direito não classificados noutras áreas',
+  'Programas de Ciências físicas não classificados noutras áreas',
+  'Programas de Ciências sociais e comportamentais não classificados noutras áreas',
+  'Programas de Ciências sociais, jornalismo e informação não classificados noutras áreas',
+  'Programas de Educação não classificados noutras áreas',
+  'Programas de Educação sem definição precisa',
+  'Programas de Engenharia e tecnologias afins não classificados noutras áreas',
+  'Programas de Engenharia, indústrias transformadoras e construção não classificados noutras áreas',
+  'Programas de Humanidades (exceto línguas) não classificados noutras áreas',
+  'Programas de Indústrias transformadoras não classificados noutras áreas',
+  'Programas de Jornalismo e informação não classificados noutras áreas',
+  'Programas de Línguas não classificados noutras áreas',
+  'Programas de Proteção social não classificados noutras áreas',
+  'Programas de Saúde e proteção social não classificados noutras áreas',
+  'Programas de Saúde não classificados noutras áreas',
+  'Programas de Tecnologias da informação e comunicação (TICs) não classificados noutras áreas',
+  'Programas e qualificações genéricos sem definição precisa',
+  'Programas e qualificações interdisciplinares que envolvem a Educação',
+  'Programas e qualificações interdisciplinares que envolvem a Engenharia, indústrias transformadoras e construção',
+  'Programas e qualificações interdisciplinares que envolvem as Artes e humanidades',
+  'Programas e qualificações interdisciplinares que envolvem as Ciências naturais, matemática e estatística',
+  'Programas e qualificações interdisciplinares que envolvem as Tecnologias da Informação e Comunicação (TICs)',
+  'Proteção social sem definição precisa',
+  ... 20 more items
+]
+
+1.2.4 - db.contracts.aggregate([
+  {
+    $group: {
+      _id: { $year: { $dateFromString: { dateString: "$DataInicioContrato", format: "%d/%m/%Y" } } },
+      total: { $sum: 1 }
+    }
+  },
+  { $sort: { _id: 1 } }
+])
+
+Resultado:
+
+[
+  { _id: 2017, total: 1310 },
+  { _id: 2018, total: 2042 },
+  { _id: 2019, total: 5833 },
+  { _id: 2020, total: 6293 },
+  { _id: 2021, total: 2465 }
+]
+
+1.2.5 - db.contracts.aggregate([
+  { $group: { _id: "$NomeInstituicao", total: { $sum: 1 } } }
+])
+
+[
+  {
+    _id: 'IST-ID, Associação do Instituto Superior Técnico para a Investigação e o Desenvolvimento',
+    total: 45
+  },
+  { _id: 'Universidade de Coimbra - Faculdade de Direito', total: 35 },
+  { _id: 'Escola Superior de Enfermagem de Coimbra', total: 68 },
+  { _id: 'Universidade de Coimbra - Faculdade de Farmácia', total: 47 },
+  { _id: 'Universidade do Algarve - Faculdade de Economia', total: 12 },
+  {
+    _id: 'Universidade de Évora - Escola de Ciências e Tecnologia',
+    total: 58
+  },
+  {
+    _id: 'Centro Interdisciplinar de Investigação Marinha e Ambiental',
+    total: 8
+  },
+  { _id: 'Instituto Politécnico de Coimbra', total: 4 },
+  {
+    _id: 'Instituto Superior de Tecnologias Avançadas de Lisboa (Porto)',
+    total: 6
+  },
+  {
+    _id: 'Instituto Politécnico de Leiria - Escola Superior de Artes e Design das Caldas da Rainha',
+    total: 28
+  },
+  {
+    _id: 'Universidade da Beira Interior - Faculdade de Ciências',
+    total: 13
+  },
+  {
+    _id: 'Instituto Politécnico de Bragança - Escola Superior de Educação de Bragança',
+    total: 52
+  },
+  { _id: 'Escola Superior de Enfermagem do Porto', total: 5 },
+  {
+    _id: 'Universidade Católica Portuguesa - Faculdade de Teologia',
+    total: 24
+  },
+  {
+    _id: 'Instituto Politécnico de Coimbra - Escola Superior de Tecnologia da Saúde de Coimbra',
+    total: 29
+  },
+  { _id: 'Instituto Universitário Egas Moniz', total: 16 },
+  { _id: 'Escola Superior Gallaecia', total: 4 },
+  {
+    _id: 'Instituto Politécnico de Santarém - Escola Superior Agrária de Santarém',
+    total: 17
+  },
+  {
+    _id: 'Universidade Católica Portuguesa - Faculdade de Ciências Económicas e Empresariais',
+    total: 96
+  },
+  { _id: 'Instituto Politécnico de Beja', total: 148 }
+]
+Type "it" for more
+scienceJobs> it
+[
+  {
+    _id: 'Instituto Politécnico de Castelo Branco - Escola Superior Agrária de Castelo Branco',
+    total: 2
+  },
+  {
+    _id: 'Universidade dos Açores - Escola Superior de Saúde - Ponta Delgada',
+    total: 2
+  },
+  { _id: 'Instituto Universitário Militar - Escola Naval', total: 15 },
+  {
+    _id: 'Universidade do Porto - Faculdade de Arquitetura',
+    total: 33
+  },
+  { _id: 'Universidade do Porto - Faculdade de Desporto', total: 48 },
+  { _id: 'Instituto Politécnico de Tomar', total: 65 },
+  { _id: 'Universidade Aberta', total: 246 },
+  {
+    _id: 'Universidade de Coimbra - Instituto de Investigação Interdisciplinar',
+    total: 20
+  },
+  { _id: 'Laboratório Colaborativo para a Bioeconomia Azul', total: 1 },
+  { _id: 'Instituto Politécnico de Portalegre', total: 1 },
+  {
+    _id: 'Instituto Politécnico de Castelo Branco - Escola Superior de Saúde Dr. Lopes Dias',
+    total: 38
+  },
+  { _id: 'Instituto Superior de Gestão', total: 20 },
+  { _id: 'Escola Superior Artística do Porto', total: 15 },
+  {
+    _id: 'Universidade do Minho - Instituto de Investigação em Biomateriais, Biodegradáveis e Biomiméticos – I3Bs',
+    total: 93
+  },
+  { _id: 'Instituto Nacional de Engenharia Biomédica', total: 11 },
+  {
+    _id: 'Universidade de Lisboa - Instituto Superior de Ciências Sociais e Políticas',
+    total: 86
+  },
+  { _id: 'Centro de Estudos Sociais', total: 15 },
+  {
+    _id: 'Universidade de Aveiro - Instituto Superior de Contabilidade e Administração de Aveiro',
+    total: 43
+  },
+  {
+    _id: 'Instituto Superior Politécnico Gaya - Escola Superior de Ciência e Tecnologia',
+    total: 12
+  },
+  {
+    _id: 'Piep Associação - Pólo de Inovação em Engenharia de Polímeros',
+    total: 16
+  },
+  ...
+]
+
+Exercício 2
+
+    1. Criação do servidor em nodejs 
+        -> Comando: "npx express-generator --view=pug ex2"
+        -> Fui para a pasta e instalei as dependências com "npm i"
+        -> Instalei os módulos necessários "npm i nodemon --save"
+        -> Acrescentei um modo de "development" no package.json
+        -> O servidor pode ser lançado com "npm start" e fica à escuta na porta 15016
